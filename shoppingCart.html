@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let ShoppingCart = {
+				items: [],
+				add: function (name, price) {
+					this.items.push({
+						name: name,
+						price: price,
+					});
+				},
+
+				removeByIndex: function (i) {
+					if (i >= this.items.length) return;
+					this.items.splice(i, 1);
+				},
+				printInfo: function () {
+					let finalPrice = 0;
+					for (i = 0; i < this.items.length; i++) {
+						let element = this.items[i];
+						finalPrice += +element.price;
+
+						console.log(
+							"w Koszyku " + element.name + ", cena: " + element.price
+						);
+					}
+					console.log("Wartość koszyka: " + finalPrice);
+				},
+			};
+
+			ShoppingCart.add("Tv", 1000);
+			ShoppingCart.add("radio", 751);
+            ShoppingCart.printInfo();
+            console.log("");
+
+            console.log("Dodanie do koszyka Phone: ");
+            ShoppingCart.add("phone", 1500);
+            ShoppingCart.printInfo();
+            console.log("");
+
+            console.log("Usunięcie z koszyka Tv: ");
+            ShoppingCart.removeByIndex(0);
+            ShoppingCart.printInfo()
+            
+		</script>
+	</body>
+</html>
