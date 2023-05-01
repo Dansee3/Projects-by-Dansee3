@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <style>
+            body{
+                background-color: aliceblue;
+                padding: 2em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            h2{
+                color: cadetblue;
+                text-align: center;
+            }
+
+            .row{
+                display: flex;
+            }
+
+            .column{
+                flex: 30%;
+            }
+
+            #avatar-img{
+                margin: 0.5em 1em;
+                border-radius: 5em;
+            }
+            .user-profile{
+                margin: auto;
+                padding: 0.5em;
+                max-width: 25em;
+                background-color: white;
+                border-radius: 0.4em;
+                color: cadetblue;
+                border: 3px solid rgba(128, 128, 128, 0.538);
+                
+            }
+            #full-name{
+                margin-top: 0.5em;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            #username{
+                font-size: 0.8em;
+            }
+            #user-details{
+                margin-top: 1em;
+                font-size: 0.8em;
+                color: teal;
+            }
+            #email{
+                margin-bottom: 1.5em;
+            }
+        </style>
+	</head>
+	<body>
+		<h2>Random user</h2>
+		<div class="user-profile">
+			<div class="row">
+				<div class="column">
+					<img id="avatar-img" src="" alt="" />
+				</div>
+				<div class="column">
+					<div id="full-name">full-name</div>
+					<div id="username">username</div>
+					<div id="user-details">
+						<div id="email">email</div>
+                        <div id="country">country</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			window.onload = function () {
+				fetch("https://randomuser.me/api")
+					.then((response) => response.json())
+					.then((data) => dataReady(data));
+			};
+			function dataReady(data) {
+				console.log(data);
+                let result = data.results[0];
+                let fullname = result.name.title + " " + result.name.first + " " + result.name.last;
+
+                document.getElementById("full-name").innerHTML = fullname;
+
+                let img = result.picture.large;
+                document.getElementById("avatar-img").src = img;
+
+                let username = result.login.username;
+                document.getElementById("username").innerHTML = "@" + username;
+
+                let email = result.email;
+                document.getElementById("email").innerHTML = email;
+
+                let country = result.location.timezone.description;
+                document.getElementById("country").innerHTML = country;
+			}
+		</script>
+	</body>
+</html>
