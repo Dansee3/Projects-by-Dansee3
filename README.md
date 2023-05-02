@@ -2,8 +2,10 @@
 # Projects-by-Dansee3
 =======
 # Projects-by-Dansee3
-1. Added easy shopping cart
+1. Added simple shopping cart
 >>>>>>> Projects
-2. Added easy text stats project.
-Added easy random user project.
+2. Added simple text stats project.
+Added simple random user project.
 Added hangman game.
+
+3.Added simple weather app.
