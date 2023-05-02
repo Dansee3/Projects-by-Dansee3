@@ -119,7 +119,7 @@ function sprawdz(nr){
     }
     //wygrana
     if(haslo == haslo1)
-    document.getElegit pushmentById("alfabet").innerHTML = "Brawo, odgadłeś hasło ! :"
+    document.getElegitmentById("alfabet").innerHTML = "Brawo, odgadłeś hasło ! :"
     +"<br /><br />"+haslo+'<span class="reset" onclick="location.reload()"> JESZCZE RAZ ? </span>';
 
     //przegrana
