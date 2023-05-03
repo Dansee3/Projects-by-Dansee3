@@ -35,7 +35,9 @@ function updateWeatherData(data) {
     const cloudiness = data.clouds.all;
     const windSpeed = data.wind.speed;
     const sunrise = new Date(data.sys.sunrise * 1000);
+        const sunriseEng = sunrise.toLocaleTimeString("en-US");
     const sunset = new Date(data.sys.sunset * 1000);
+        const sunsetEng = sunset.toLocaleTimeString("en-US");
 
     const locationLink = document.getElementById("locationLink");
     locationLink.innerHTML = city;
@@ -51,11 +53,9 @@ function updateWeatherData(data) {
 
     document.getElementById("windSpeed").innerHTML = windSpeed + " km/h";
 
-    document.getElementById("sunrise").innerHTML =
-        sunrise.getHours() + ":" + sunrise.getMinutes() + " AM";
+    document.getElementById("sunrise").innerHTML = sunriseEng;
 
-    document.getElementById("sunset").innerHTML =
-        sunset.getHours() + ":" + sunrise.getMinutes() + " AM";
+    document.getElementById("sunset").innerHTML = sunsetEng;
 
     let imgUrl =
         "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
