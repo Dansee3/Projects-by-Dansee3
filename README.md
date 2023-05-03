@@ -11,3 +11,5 @@ Added hangman game.
 3.Added simple weather app.
 
 4. Added simple timer.
+5. Added simple slider.
+6. Added memory game Gwent.
