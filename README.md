@@ -21,10 +21,4 @@
 7. Added books list.
 8. Added simple countdown timer.
 9. Added quiz.
-=======
-<<<<<<< HEAD
-6. Added memory game Gwent.
-=======
-6. Added memory game Gwent.
->>>>>>> 1d7025befc427ff1f213e591dad96c33d728d548
->>>>>>> 51371165e20137d44d73ef1cb63b3bfd501ba70e
+
