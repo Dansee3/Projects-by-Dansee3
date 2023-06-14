@@ -13,3 +13,4 @@ Added hangman game.
 4. Added simple timer.
 5. Added simple slider.
 6. Added memory game Gwent.
+7. Added simple calculator
