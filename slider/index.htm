@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="slider.js"></script>
 </head>
-<body onload="zmienslajd()">
-    <span onclick="ustawslajd(1)" style="cursor: pointer;">[1]</span>
-    <span onclick="ustawslajd(2)" style="cursor: pointer;">[2]</span>
-    <span onclick="ustawslajd(3)" style="cursor: pointer;">[3]</span>
-    <span onclick="ustawslajd(4)" style="cursor: pointer;">[4]</span>
-    <span onclick="ustawslajd(5)" style="cursor: pointer;">[5]</span>
-        <div id="slider"></div>
+
+<body onload="changeSlide()">
+    <span onclick="setSlide(1)" style="cursor: pointer;">[1]</span>
+    <span onclick="setSlide(2)" style="cursor: pointer;">[2]</span>
+    <span onclick="setSlide(3)" style="cursor: pointer;">[3]</span>
+    <span onclick="setSlide(4)" style="cursor: pointer;">[4]</span>
+    <span onclick="setSlide(5)" style="cursor: pointer;">[5]</span>
+    <div id="slider"></div>
     </div>
 </body>
+
 </html>
