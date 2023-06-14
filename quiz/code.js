@@ -37,6 +37,8 @@ class Quiz {
 
   modalWindow = null;
 
+  radio = document.querySelectorAll("input[type='radio']");
+
   init() {
     this.heading = document.querySelector('.alert-heading');
     this.answer0 = document.querySelector('#answer0');
@@ -69,6 +71,10 @@ class Quiz {
     this.userSelectedInput = document.querySelector(
       "input[type='radio']:checked",
     );
+    this.radio.forEach((el) => {
+      el.disabled = true;
+    });
+
     if (!this.userSelectedInput) return;
 
     const selectedIndex = this.userSelectedInput.getAttribute('data-index');
@@ -118,7 +124,7 @@ class Quiz {
     document.querySelectorAll("input[type='radio']").forEach((el) => {
       el.classList.remove('is-valid');
       el.classList.remove('is-invalid');
-      el.checked = false;
+      el.disabled = false;
     });
 
     this.saveAnswerButton.classList.remove('disabled');
@@ -132,7 +138,7 @@ class Quiz {
       information = 'Nice job ! Half or more of the answers are correct ! ';
     } else {
       information =
-        'Unfortunately, less than half of the answers are incorrect';
+        'Unfortunately, less than half of the answers are incorrect..';
     }
     modalParagraph.innerHTML = information;
     this.modalWindow.toggle();
