@@ -21,4 +21,5 @@
 7. Added books list.
 8. Added simple countdown timer.
 9. Added quiz.
-
+10. Added simple autocomplete field.
+11. Added payroll calculator.

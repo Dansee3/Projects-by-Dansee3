@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Calculator UOP Netto - Brutto</title>
+</head>
+
+<body>
+
+    <div class="container w-75 mx-auto -m4">
+        <div class="row">
+            <label for="salary" class="col-form-label col-sm-4">
+                The gross amount:
+            </label>
+            <div class="col-sm-8"><input type="text" class="form-control" id="salary" value=""></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h6>Employee contributions:</h6>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Name of contributions:</td>
+                            <td>Sum:</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Retimerent contribution 9,76%:</td>
+                            <td id="retirementContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pension contribution 1,50%:</td>
+                            <td id="pensionContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sickness contribution 2.45%:</td>
+                            <td id="sicknessContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Sum of insurance contributions financed by the employee:</td>
+                            <td id="workerSocialContributionsSum">-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Basis for the assessment of health insurance contribution:</td>
+                            <td id="baseForHealthContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Health insurance contribution 9%:</td>
+                            <td id="healthContribution">-</td>
+
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Tax advance:</td>
+                            <td id="advanceTax">-</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Health insurance contribution at a rate of 7.75%:</td>
+                            <td id="healthAmountToExclude"></td>
+                        </tr>
+                        <tr class="table-success">
+                            <td>9</td>
+                            <td>Net amount:</td>
+                            <td id="finalWorkerNetMoney">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h6>Contributions paid by the employer:</h6>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Name of contributions:</td>
+                            <td>Sum:</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Retirement contribution 9.76%:</td>
+                            <td id="employerRetirementContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pension contribution 6.50%:</td>
+                            <td id="employerPensionContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Accident insurance contribution 1.67%:</td>
+                            <td id="employerAccidentInsurance">-</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Work fund contribution 2.45%:</td>
+                            <td id="employerWorkFundContribution">-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Guaranteed employee work fund contribution 0.10%:</td>
+                            <td id="employerGwarantedWorkFundContributions">-</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td>6</td>
+                            <td>Total employer contributions:</td>
+                            <td id="employerContributionSum">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="code.js"></script>
+</body>
+
+</html>
