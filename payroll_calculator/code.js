@@ -141,7 +141,7 @@ class MonthlyEmloyerCost {
   employerWorkFundContribution;
 
   // Guaranteed employee work fund contribution 0.10%
-  employerGuarantedWorkFundContributions;
+  employerGwarantedWorkFundContributions;
 
   // Total employer contributions
   employerContributionSum;
@@ -164,7 +164,7 @@ class MonthlyEmloyerCost {
     this.employerWorkFundContribution = grossAmount * 0.0245;
 
     // Guaranteed employee work fund contribution 0.10%
-    this.employerGuarantedWorkFundContributions = grossAmount * 0.001;
+    this.employerGwarantedWorkFundContributions = grossAmount * 0.001;
 
     // Total employer contributions
     this.employerContributionSum =
@@ -172,7 +172,7 @@ class MonthlyEmloyerCost {
       this.employerPensionContribution +
       this.employerAccidentInsurance +
       this.employerWorkFundContribution +
-      this.employerGuarantedWorkFundContributions;
+      this.employerGwarantedWorkFundContributions;
   }
 }
 
@@ -282,8 +282,8 @@ class Ui {
 
     // Guaranteed employee work fund contribution 0.10%
     this.setValueById(
-      'employerGuarantedWorkFundContributions',
-      monthlyEmployerCost.employerGuarantedWorkFundContributions.toFixed(2),
+      'employerGwarantedWorkFundContributions',
+      monthlyEmployerCost.employerGwarantedWorkFundContributions.toFixed(2),
     );
 
     // Total employer contributions
