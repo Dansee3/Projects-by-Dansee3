@@ -138,7 +138,7 @@ class Quiz {
       information = 'Nice job ! Half or more of the answers are correct ! ';
     } else {
       information =
-        'Unfortunately, less than half of the answers are incorrect..';
+        'Unfortunately, more than half of the answers are incorrect..';
     }
     modalParagraph.innerHTML = information;
     this.modalWindow.toggle();
