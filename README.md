@@ -24,3 +24,5 @@
 10. Added simple autocomplete field.
 11. Added payroll calculator.
 12. Added TicTacToe
+13. Added exchange rates.
+14. Added video player.

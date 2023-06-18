@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#video-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  object-fit: cover;
+}
+
+#controls {
+  position: absolute;
+  visibility: visible;
+  bottom: 10px;
+  font-size: 20px;
+  display: flex;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+#controls:hover {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+#play-pause {
+  padding: 5px 15px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 1px solid rgb(186, 23, 201);
+  margin: 0px 10px;
+}
+
+#mute-button {
+  padding: 5px 15px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 1px solid rgb(186, 23, 201);
+  margin: 0px 10px;
+}
+#fullscreen {
+  padding: 5px 15px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 1px solid rgb(186, 22, 201);
+  margin: 0px 10px;
+}
+#progress-input {
+  width: 50vw;
+}
