@@ -1,7 +1,7 @@
-var numer = Math.floor(Math.random() * 5) + 1;
+let numer = Math.floor(Math.random() * 5) + 1;
 
-var timer1 = 0;
-var timer2 = 0;
+let timer1 = 0;
+let timer2 = 0;
 
 function setSlide(nrslajdu) {
   clearTimeout(timer1);
@@ -20,7 +20,7 @@ function changeSlide() {
   numer++;
   if (numer > 5) numer = 1;
 
-  var plik = '<img src="slajdy/slajd' + numer + '.png" />';
+  let plik = '<img src="slajdy/slajd' + numer + '.png" />';
   document.getElementById('slider').innerHTML = plik;
   $('#slider').fadeIn(500);
 

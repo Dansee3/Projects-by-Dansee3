@@ -1,4 +1,4 @@
-(function (window, document) {
+window.addEventListener('load', () => {
   const video = document.getElementById('video');
   const playPauseButton = document.getElementById('play-pause');
   const progressInput = document.getElementById('progress-input');
@@ -13,9 +13,7 @@
   let wasPausedBeforeSeek;
   let controlsTimeout;
 
-  window.onload = init;
-
-  function init() {
+  const init = () => {
     video.controls = false;
     playPauseButton.addEventListener('click', playPauseClicked);
     video.addEventListener('play', updatePlayPauseIcon);
@@ -27,9 +25,7 @@
       wasPausedBeforeSeek = video.paused;
       video.pause();
     });
-    progressInput.addEventListener('mouseup', () => {
-      seekVideo();
-    });
+    progressInput.addEventListener('mouseup', seekVideo);
     if (fullscreenSupported) {
       fullscreenButton.addEventListener('click', handleFullscreen);
     } else {
@@ -43,9 +39,9 @@
         videoControls.style.opacity = '0';
       }
     });
-  }
+  };
 
-  function handleFullscreen() {
+  const handleFullscreen = () => {
     if (!fullscreenSupported) return;
 
     if (!document.fullscreenElement) {
@@ -55,9 +51,9 @@
       document.exitFullscreen();
       fullscreenButton.innerHTML = '<i class="fa fa-expand"></i>';
     }
-  }
+  };
 
-  function showControls() {
+  const showControls = () => {
     videoControls.style.opacity = '1';
     if (!video.paused && controlsTimeout === undefined) {
       controlsTimeout = setTimeout(() => {
@@ -65,14 +61,14 @@
         controlsTimeout = undefined;
       }, 3000);
     }
-  }
+  };
 
-  function stopHidingControls() {
+  const stopHidingControls = () => {
     clearTimeout(controlsTimeout);
     controlsTimeout = undefined;
-  }
+  };
 
-  function playPauseClicked() {
+  const playPauseClicked = () => {
     if (video.paused) {
       video.play();
       showControls();
@@ -81,35 +77,31 @@
       stopHidingControls();
       videoControls.style.opacity = '1';
     }
-  }
+  };
 
-  function updatePlayPauseIcon() {
-    if (video.paused) {
-      playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
-    } else {
-      playPauseButton.innerHTML = '<i class="fa fa-pause"></i>';
-    }
-  }
+  const updatePlayPauseIcon = () => {
+    playPauseButton.innerHTML = video.paused
+      ? '<i class="fa fa-play"></i>'
+      : '<i class="fa fa-pause"></i>';
+  };
 
-  function muteButtonClicked() {
+  const muteButtonClicked = () => {
     video.muted = !video.muted;
-    if (video.muted) {
-      muteButton.innerHTML = '<i class="fa fa-volume-mute"></i>';
-    } else {
-      muteButton.innerHTML = '<i class="fa fa-volume-up"></i>';
-    }
-  }
+    muteButton.innerHTML = video.muted
+      ? '<i class="fa fa-volume-mute"></i>'
+      : '<i class="fa fa-volume-up"></i>';
+  };
 
-  function updateVideoProgress() {
+  const updateVideoProgress = () => {
     progressInput.value = (video.currentTime / video.duration) * 100;
     let minutes = Math.floor(video.currentTime / 60);
     if (minutes < 10) minutes = '0' + minutes;
     let secounds = Math.floor(video.currentTime % 60);
     if (secounds < 10) secounds = '0' + secounds;
     videoProgress.innerHTML = `${minutes}:${secounds}`;
-  }
+  };
 
-  function seekVideo() {
+  const seekVideo = () => {
     let seekToTime = (progressInput.value * video.duration) / 100;
 
     if (seekToTime < 0 || seekToTime > video.duration) return;
@@ -128,5 +120,7 @@
           });
       }
     }
-  }
-})(window, document);
+  };
+
+  init();
+});

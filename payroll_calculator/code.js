@@ -81,7 +81,7 @@ class MonthlyEmployeeIncome {
       this.accumulatedYearlyIncomeSum < 85528 &&
       futureYearlyIncome >= 85528
     ) {
-      // pierwszy miesiąc gdzie przekroczony jest próg 17% do 85k, 32% ponad 85k
+      // the first month where the threshold is exceeded 17% up to 85k, 32% over 85k
       let taxableAt17 = 85528 - this.accumulatedYearlyIncomeSum;
       let taxableAt32 = futureYearlyIncome - 85528;
 
@@ -122,7 +122,7 @@ class MonthlyEmployeeIncome {
 
 const monthlyIncome = new MonthlyEmployeeIncome();
 
-// Składki na pracownika płacone przez pracodawcę
+// Employee contributions paid by the employer
 class MonthlyEmloyerCost {
   grossAmount;
   monthNum;
@@ -178,10 +178,10 @@ class MonthlyEmloyerCost {
 
 const monthlyEmployerCost = new MonthlyEmloyerCost();
 
-// Interfejs użytkownika
+// User Interface
 class Ui {
   salaryInput;
-  salaryGross; // kwota brutto
+  salaryGross; // The gross amount
   init() {
     this.salaryInput = document.getElementById('salary');
     this.salaryInput.addEventListener('input', this.salaryChange);

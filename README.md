@@ -26,3 +26,5 @@
 12. Added TicTacToe
 13. Added exchange rates.
 14. Added video player.
+15. Added img slider before/after
+16. Added snake game.
