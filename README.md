@@ -16,10 +16,11 @@
 
 4. Added simple timer.
 5. Added simple slider.
-<<<<<<< HEAD
+   <<<<<<< HEAD
 6. Added memory game Gwent.
 7. Added books list.
 8. Added simple countdown timer.
 9. Added quiz.
 10. Added simple autocomplete field.
 11. Added payroll calculator.
+12. Added TicTacToe
