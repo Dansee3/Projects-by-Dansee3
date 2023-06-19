@@ -1,0 +1,106 @@
+:root {
+  --color-body: #c1bdba;
+  --color-success: #2ecc72;
+  --color-error: #e75c4c;
+  --color-form: #a0b3b0;
+  --color-form-background: #24333c;
+  --color-text: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-body);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 450px;
+  background-color: var(--color-form-background);
+  border-radius: 5px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  color: var(--color-text);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.registration-form {
+  padding: 25px 35px;
+}
+
+.field-control {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.field-control label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-form);
+}
+
+.field-control input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-form);
+  background-color: var(--color-form-background);
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.field-control input::placeholder {
+  color: var(--color-form);
+}
+
+.field-control input.success {
+  border-color: var(--color-success);
+}
+
+.field-control input.error {
+  border-color: var(--color-error);
+}
+
+.field-control span {
+  display: inline-block;
+  color: var(--color-error);
+  visibility: hidden;
+}
+
+.field-control span.success {
+  color: var(--color-success);
+}
+
+.field-control span.error {
+  color: var(--color-error);
+  visibility: visible;
+}
+
+.registration-form .register-button {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  transition: all 0.5s ease;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  background-color: #1ab188;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.register-button:hover,
+.register-button:focus {
+  background: #179b77;
+}
